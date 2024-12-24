@@ -193,7 +193,7 @@ install(DIRECTORY
 )
 
 install(DIRECTORY
-  cfg
+  config
   launch
   recordings
   DESTINATION share/${PROJECT_NAME}/
@@ -201,7 +201,7 @@ install(DIRECTORY
 
 install(DIRECTORY
   ${DJI_HMS_RETURN_CODES_PATH}/
-  DESTINATION share/${PROJECT_NAME}/cfg
+  DESTINATION share/${PROJECT_NAME}/config
 )
 
 ament_export_dependencies(

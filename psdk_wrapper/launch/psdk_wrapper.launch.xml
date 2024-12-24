@@ -3,8 +3,8 @@
         exec="psdk_wrapper_node" 
         name="psdk_wrapper_node" 
         output="screen"
-        args="$(find-pkg-share psdk_wrapper)/cfg/dji_sdk_config.json"
+        args="$(find-pkg-share psdk_wrapper)/config/dji_sdk_config.json"
         launch-prefix="stdbuf -o L">
-        <param from="$(find-pkg-share psdk_wrapper)/cfg/dji_ros2_params.yaml" />
+        <param from="$(find-pkg-share psdk_wrapper)/config/dji_ros2_params.yaml" />
     </node>
 </launch>
