@@ -16,6 +16,11 @@ So far, only the following critical functionalities have been implemented:
 - Liveview
 - Gimbal control
 
+## Tutorials
+
+### - [Tutorial 0: Installation](docs/installation.md)
+### - [Tutorial 1: Running the wrapper](docs/running_the_wrapper.md)
+
 ## Future work
 - Implement custom widgets to interact with the wrapper from RC or MSDK.
 - Implement more functionalities such as HMS (Health Management System), RTK positioning and additional payload.
