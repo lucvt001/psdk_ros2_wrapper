@@ -1,0 +1,17 @@
+uint8 SUCCESS = 0
+uint8 TIMEOUT = 1
+uint8 PSDK_LOST_CTRL_AUTHORITY = 2
+uint8 OTHER_ERROR = 3
+
+# Goal
+# Ground coordinate: NEU
+# Body coordinate: FRU
+float32 x
+float32 y
+float32 z
+float32 yaw
+int32 timeout
+---
+uint8 error_code
+---
+# Feedback

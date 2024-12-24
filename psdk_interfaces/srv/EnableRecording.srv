@@ -1,0 +1,6 @@
+bool TURN_ON = true
+bool TURN_OFF = false
+
+bool is_enable
+---
+bool is_success

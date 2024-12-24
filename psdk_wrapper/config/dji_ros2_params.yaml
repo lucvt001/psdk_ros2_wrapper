@@ -1,0 +1,15 @@
+psdk_wrapper_node:
+  ros__parameters:
+    liveview:
+      is_enable: True
+      camera_index: 1
+      topic_name: "/sensor/camera"
+      is_display: false
+      mp4_output_folder: "/docker_ws/src/psdk_ros2_wrapper/psdk_wrapper/recordings"
+      enable_recording_server_name: "/psdk_wrapper_node/enable_recording"
+
+    flight_control:
+      is_enable: True
+
+    gimbal:
+      is_enable: True
