@@ -23,11 +23,15 @@ void PSDKWrapper::initialize()
     if (is_enable_gimbal_) {
         gimbal_wrapper_ = std::make_unique<GimbalWrapper>(this->shared_from_this());
         RCLCPP_INFO(get_logger(), "Gimbal enabled");
-    }
+    }  
     
     if (is_enable_liveview_) {
-        liveview_wrapper_ = std::make_unique<LiveViewWrapper>(this->shared_from_this());
-        RCLCPP_INFO(get_logger(), "Liveview enabled");
+        try {
+            liveview_wrapper_ = std::make_unique<LiveViewWrapper>(this->shared_from_this());
+            RCLCPP_INFO(get_logger(), "Liveview enabled");
+        } catch (...) {
+            RCLCPP_ERROR(get_logger(), "Failed to initialize LiveviewSample");
+        }
     }
 }
 
