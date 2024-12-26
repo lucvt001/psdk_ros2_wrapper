@@ -23,5 +23,6 @@ So far, only the following critical functionalities have been implemented:
 
 ## Future work
 - Implement custom widgets to interact with the wrapper from RC or MSDK.
-- Implement more functionalities such as HMS (Health Management System), RTK positioning and additional payload.
+- Implement more functionalities such as HMS (Health Management System), wayload navigation and additional payload.
+- More control authority implementation: what to do when control authority is lost, how to handle multiple control authorities, etc.
 - Integrate with BT for proper behavior control.

@@ -3,18 +3,8 @@
 LiveViewWrapper::LiveViewWrapper(std::shared_ptr<rclcpp::Node> node)
     : node_(node)
 {
-    // --------------------------------------------------------------
-    // This blocks of code will initialize the Liveview module
-    // try {
-    //     liveviewSample = new LiveviewSample();
-    // } catch (...) {
-    //     RCLCPP_ERROR(node_->get_logger(), "Failed to initialize LiveviewSample");
-    //     // exit(1);
-    //     return;
-    // }
-
+    // This line of code will take care of live view initialization
     liveviewSample = new LiveviewSample();
-    // --------------------------------------------------------------
 
     node_->declare_parameter<int>("liveview.camera_index", 1);
     node_->declare_parameter<std::string>("liveview.mp4_output_folder", "");
