@@ -49,26 +49,24 @@ void LiveViewWrapper::DjiUser_ShowRgbImageCallback(CameraRGBImage img, void *use
 
     cv::Mat mat(img.height, img.width, CV_8UC3, img.rawData.data(), img.width * 3);
     cv::cvtColor(mat, mat, cv::COLOR_RGB2BGR);
+
+    cv::Mat resized_mat;
+    cv::resize(mat, resized_mat, cv::Size(mat.cols / 3, mat.rows / 3));
     
     if (live_view_wrapper->is_display_) {
-        cv::imshow("frame", mat); // Display the frame
+        cv::imshow("frame", resized_mat); // Display the frame
         cv::waitKey(10);
     }
 
-    live_view_wrapper->publishImage(mat);
+    live_view_wrapper->publishImage(resized_mat);
 
     if (live_view_wrapper->frame_width_ == -1) {
-        live_view_wrapper->frame_width_ = mat.cols;
-        live_view_wrapper->frame_height_ = mat.rows;
+        live_view_wrapper->frame_width_ = resized_mat.cols;
+        live_view_wrapper->frame_height_ = resized_mat.rows;
     }
 
     if (live_view_wrapper->is_recording_started_ && live_view_wrapper->video_writer_.isOpened()) {
-        // cv::Mat resized_mat;
-        // cv::Size frame_size(640, 480); // The size you initialized the VideoWriter with
-        // cv::resize(mat, resized_mat, frame_size);
-        // live_view_wrapper->video_writer_ << resized_mat; // Write the frame to the video
-
-        live_view_wrapper->video_writer_ << mat; // Write the frame to the video
+        live_view_wrapper->video_writer_ << resized_mat; // Write the frame to the video
     }
 }
 
